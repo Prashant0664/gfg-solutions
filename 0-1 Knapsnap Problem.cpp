@@ -1,79 +1,41 @@
 //{ Driver Code Starts
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
 
 // } Driver Code Ends
 class Solution
 {
-    
-    public:
-    int knapSack(int W, int wt[], int val[], int n){
+
+public:
+    int knapSack(int W, int wt[], int val[], int n)
+    {
         int i, w;
-      vector<vector<int>> K(n + 1, vector<int>(W + 1));
-        for(i = 0; i <= n; i++)
+        vector<vector<int>> K(n + 1, vector<int>(W + 1));
+        for (i = 0; i <= n; i++)
         {
-            for(w = 0; w <= W; w++)
+            for (w = 0; w <= W; w++)
             {
                 if (i == 0 || w == 0)
                     K[i][w] = 0;
                 else if (wt[i - 1] <= w)
                     K[i][w] = max(val[i - 1] +
-                                    K[i - 1][w - wt[i - 1]],
-                                    K[i - 1][w]);
+                                      K[i - 1][w - wt[i - 1]],
+                                  K[i - 1][w]);
                 else
                     K[i][w] = K[i - 1][w];
             }
         }
         return K[n][W];
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // { 
+
+    // {
     //     int** dp;
     //     dp = new int*[n];
-     
+
     //     // loop to create the table dynamically
     //     for (int i = 0; i < n; i++)
     //         dp[i] = new int[w + 1];
-     
+
     //     // loop to initially filled the
     //     // table with -1
     //     for (int i = 0; i < n; i++)
@@ -92,7 +54,7 @@ class Solution
     //     // return 1;
     //     // if(w==0){return 0;}
     //     // if(n==0){return 0;}
-        
+
     //     // // int r=knapSnap(w,wt,val,n-1);
     //     // int r=0;
     //     // if(w<wt[n-1]){
@@ -108,31 +70,30 @@ class Solution
 //{ Driver Code Starts.
 
 int main()
- {
-    //taking total testcases
+{
+    // taking total testcases
     int t;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
-        //reading number of elements and weight
+        // reading number of elements and weight
         int n, w;
-        cin>>n>>w;
-        
+        cin >> n >> w;
+
         int val[n];
         int wt[n];
-        
-        //inserting the values
-        for(int i=0;i<n;i++)
-            cin>>val[i];
-        
-        //inserting the weights
-        for(int i=0;i<n;i++)
-            cin>>wt[i];
+
+        // inserting the values
+        for (int i = 0; i < n; i++)
+            cin >> val[i];
+
+        // inserting the weights
+        for (int i = 0; i < n; i++)
+            cin >> wt[i];
         Solution ob;
-        //calling method knapSack()
-        cout<<ob.knapSack(w, wt, val, n)<<endl;
-        
+        // calling method knapSack()
+        cout << ob.knapSack(w, wt, val, n) << endl;
     }
-	return 0;
+    return 0;
 }
 // } Driver Code Ends
