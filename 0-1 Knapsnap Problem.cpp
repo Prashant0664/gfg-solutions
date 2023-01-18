@@ -27,44 +27,6 @@ public:
         }
         return K[n][W];
     }
-
-    // {
-    //     int** dp;
-    //     dp = new int*[n];
-
-    //     // loop to create the table dynamically
-    //     for (int i = 0; i < n; i++)
-    //         dp[i] = new int[w + 1];
-
-    //     // loop to initially filled the
-    //     // table with -1
-    //     for (int i = 0; i < n; i++)
-    //         for (int j = 0; j < w + 1; j++)
-    //             dp[i][j] = -1;
-    //     // int *m=new int[w+1];
-    //     // int **arr=new int*[n];
-    //     // for(int i=0;i<n;i++){
-    //         // arr[i]=m;
-    //         // for(int j=0;j<n+1;j++){
-    //             // arr[i][j]=-1;
-    //         // }
-    //     // }
-    //     // return 1;
-    //     return knapSackRec(w,wt,val,n-1,dp);
-    //     // return 1;
-    //     // if(w==0){return 0;}
-    //     // if(n==0){return 0;}
-
-    //     // // int r=knapSnap(w,wt,val,n-1);
-    //     // int r=0;
-    //     // if(w<wt[n-1]){
-    //     //     r= knapSack(w,wt,val,n-1);
-    //     //     return r;
-    //     // }
-    //     // else{
-    //     //     return max(val[n-1]+knapSack(w-wt[n-1],wt,val,n-1),knapSack(w,wt,val,n-1));
-    //     // }
-    // }
 };
 
 //{ Driver Code Starts.
