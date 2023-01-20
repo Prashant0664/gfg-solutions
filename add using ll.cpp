@@ -1,4 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
 
+
+/*
 class Solution
 {
     public:
@@ -52,11 +56,124 @@ class Solution
             
             //storing the previously made nodes in the link part of new node.
             newNode->next = sum;
-             //making the new node as the first node of all previously made node.
+            
+            //making the new node as the first node of all previously made node.
             sum = newNode;
+            
+            //moving ahead in both lists.
             if(first) first = first->next; 
             if(second) second = second->next;
         }
         return sum;
     }
 };
+
+int main(){
+
+}*/
+//{ Driver Code Starts
+// driver
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/* Linked list Node */
+struct Node {
+    int data;
+    struct Node* next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
+struct Node* buildList(int size)
+{
+    int val;
+    cin>> val;
+    
+    Node* head = new Node(val);
+    Node* tail = head;
+    
+    for(int i=0; i<size-1; i++)
+    {
+        cin>> val;
+        tail->next = new Node(val);
+        tail = tail->next;
+    }
+    
+    return head;
+}
+
+void printList(Node* n)
+{
+    while(n)
+    {
+        cout<< n->data << " ";
+        n = n->next;
+    }
+    cout<< endl;
+}
+
+
+// } Driver Code Ends
+/* node for linked list:
+
+struct Node {
+    int data;
+    struct Node* next;
+    Node(int x) {
+        data = x;
+        next = NULL;
+    }
+};
+
+*/
+
+class Solution
+{
+    public:
+    //Function to add two numbers represented by linked list.
+    struct Node* addTwoLists(struct Node* first, struct Node* second)
+    {
+        long long int s1=0;
+        
+        while(first){
+            s1=s1*10+first->data;
+            first=first->next;
+        }
+        
+        long long int s2=0;
+        while(second){
+            s2=s2*10+first->data;
+            second=second->next;
+        }
+        struct Node*m=new Node(s1+s2);
+        return m;
+    }
+};
+
+
+//{ Driver Code Starts.
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n, m;
+        
+        cin>>n;
+        Node* first = buildList(n);
+        
+        cin>>m;
+        Node* second = buildList(m);
+        Solution ob;
+        Node* res = ob.addTwoLists(first,second);
+        printList(res);
+    }
+    return 0;
+}
+
+// } Driver Code Ends
