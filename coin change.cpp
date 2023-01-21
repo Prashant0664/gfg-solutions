@@ -1,3 +1,5 @@
+/*
+
 class Solution {
   public:
     long long int count(int coins[], int N, int sum) {
@@ -11,3 +13,5 @@ class Solution {
         return table[sum];
     }
 };
+
+*/
