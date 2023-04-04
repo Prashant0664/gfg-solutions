@@ -24,27 +24,6 @@ class Solution {
 		                    break;
 		                }
 		            }
-		          //  if(s.front()==st[i]){
-		          //      s.pop();
-		          //  }
-		          //  if(s.size()>0){
-		          //      ans+=s.front();
-		          //  }
-		          //  else{
-		          //      ans+='#';
-		          //  }
-		      //  }
-		      //  else{
-		      //      m[st[i]]++;
-		      //      s.push(st[i]);
-		            
-		      //      if(s.size()>0){
-		      //          ans+=s.front();
-		      //      }
-		      //      else{
-		      //          ans+='#';
-		      //      }
-		      //  }
 		      if(s.size()==0){
 		          ans+='#';
 		      }
