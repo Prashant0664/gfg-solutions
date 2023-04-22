@@ -6,8 +6,7 @@ int main(){
     cin>>_;
     while(_--){
         string s="00";
-        s[0]='9';
-        cout<<((9)|(7));
+        // sort(s.bgin)
     }
     return 0;
 }
